@@ -17,7 +17,12 @@ docker run --rm --mount type=bind,source="$(pwd)",destination=/sm64 --user "$(id
 ```
 
 ## VSCode Update
-I needed the following `c_cpp_properties.json` file in my .vscode directory
+I needed two files in `.vscode` to make IntelliSense stop reporting false errors across this project:
+
+- `c_cpp_properties.json`
+- `settings.json`
+
+`c_cpp_properties.json`:
 
 ```json
 {
@@ -43,6 +48,9 @@ I needed the following `c_cpp_properties.json` file in my .vscode directory
         "CASTLE_SECRET_STARS(str)=",
         "EXTRA_TEXT(id,str)="
       ],
+      "forcedInclude": [
+        "${workspaceFolder}/include/sm64.h"
+      ],
       "compilerPath": "/usr/bin/gcc",
       "cStandard": "gnu89",
       "intelliSenseMode": "linux-gcc-x64"
@@ -50,6 +58,22 @@ I needed the following `c_cpp_properties.json` file in my .vscode directory
   ]
 }
 
+```
+
+`settings.json`:
+
+```json
+{
+  "files.associations": {
+    "*.inc.c": "c"
+  },
+  "files.exclude": {
+    "**/build": true
+  },
+  "search.exclude": {
+    "**/build": true
+  }
+}
 ```
 
 ## Mods
