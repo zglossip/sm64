@@ -16,6 +16,35 @@ Building with Docker on Lubuntu 25 was what worked best for me. I did have to ad
 docker run --rm --mount type=bind,source="$(pwd)",destination=/sm64 --user "$(id -u):$(id -g)" sm64 make VERSION=us COMPARE=0 -j4
 ```
 
+## VSCode Update
+I needed the following `c_cpp_properties.json` file in my .vscode directory
+
+```json
+{
+  "version": 4,
+  "configurations": [
+    {
+      "name": "sm64-us",
+      "includePath": [
+        "${workspaceFolder}",
+        "${workspaceFolder}/include",
+        "${workspaceFolder}/src"
+      ],
+      "defines": [
+        "_LANGUAGE_C",
+        "VERSION_US",
+        "F3D_OLD",
+        "NON_MATCHING=1",
+        "AVOID_UB=1"
+      ],
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu89",
+      "intelliSenseMode": "linux-gcc-x64"
+    }
+  ]
+}
+```
+
 ## Mods
 
 TBD
