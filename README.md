@@ -1,3 +1,27 @@
+# Updates
+
+This is a fork of the decompiled Super Mario 64 code from the n64decomp's [sm64](https://github.com/n64decomp/sm64) repository
+
+For now, this is mostly a playground for me to mod the game. I'll document changes I make, including functional updates I make that are specific to my needs and any mods to the game itself.
+
+Under the divider below is the original content of the README from the forked repostory. 
+
+\- [Zach Glossip](mailto:zglossip@gmail.com)
+
+## Docker
+
+Building with Docker on Lubuntu 25 was what worked best for me. I did have to add `bsdmainutils` to the Dockerfile, though. I also have to specifically run the following command to build the artifact:
+
+```
+docker run --rm --mount type=bind,source="$(pwd)",destination=/sm64 --user "$(id -u):$(id -g)" sm64 make VERSION=us COMPARE=0 -j4
+```
+
+## Mods
+
+TBD
+
+___
+
 # Super Mario 64
 
 - This repo contains a full decompilation of Super Mario 64 of the following releases: Japan (jp), North America (us), Europe (eu), Shindou (sh) and iQue Player (cn).
