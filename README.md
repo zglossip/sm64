@@ -37,7 +37,11 @@ I needed the following `c_cpp_properties.json` file in my .vscode directory
         "NON_MATCHING=1",
         "AVOID_UB=1",
         "_(x)=x",
-        "DEFINE_DIALOG(id,_1,_2,_3,_4,str)="
+        "DEFINE_DIALOG(id,_1,_2,_3,_4,str)=",
+        "COURSE_ACTS(id,name,a,b,c,d,e,f)=",
+        "SECRET_STAR(id,name)=",
+        "CASTLE_SECRET_STARS(str)=",
+        "EXTRA_TEXT(id,str)="
       ],
       "compilerPath": "/usr/bin/gcc",
       "cStandard": "gnu89",
