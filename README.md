@@ -35,7 +35,9 @@ I needed the following `c_cpp_properties.json` file in my .vscode directory
         "VERSION_US",
         "F3D_OLD",
         "NON_MATCHING=1",
-        "AVOID_UB=1"
+        "AVOID_UB=1",
+        "_(x)=x",
+        "DEFINE_DIALOG(id,_1,_2,_3,_4,str)="
       ],
       "compilerPath": "/usr/bin/gcc",
       "cStandard": "gnu89",
@@ -43,6 +45,7 @@ I needed the following `c_cpp_properties.json` file in my .vscode directory
     }
   ]
 }
+
 ```
 
 ## Mods
